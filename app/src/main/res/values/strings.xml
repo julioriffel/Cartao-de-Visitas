@@ -5,4 +5,13 @@
 
 <resources>
     <string name="app_name">Cartao de Visitas</string>
+    <string name="label_cartao_de_visita">Cartão de Visita</string>
+    <string name="novo_cartao">Novo Cartão</string>
+    <string name="label_nome">Nome</string>
+    <string name="description_botao_fechar">Botão Fechar</string>
+    <string name="label_telefone">Telefone</string>
+    <string name="label_empresa">Empresa</string>
+    <string name="label_email">E-mail</string>
+    <string name="label_cor">Cor</string>
+    <string name="label_salvar">Salvar</string>
 </resources>

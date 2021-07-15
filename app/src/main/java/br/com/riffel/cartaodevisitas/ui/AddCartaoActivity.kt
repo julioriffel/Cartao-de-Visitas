@@ -5,25 +5,27 @@
 
 package br.com.riffel.cartaodevisitas.ui
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import br.com.riffel.cartaodevisitas.databinding.ActivityMainBinding
+import br.com.riffel.cartaodevisitas.databinding.ActivityAddCartaoBinding
 
-
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class AddCartaoActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityAddCartaoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityAddCartaoBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         initListeners()
+
     }
 
     private fun initListeners() {
-        binding.fab.setOnClickListener {
-            startActivity(Intent(this, AddCartaoActivity::class.java))
+        binding.btClose.setOnClickListener {
+            finish()
+        }
+        binding.btSalvar.setOnClickListener {
+            finish()
         }
     }
 }
