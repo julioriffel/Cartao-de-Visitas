@@ -13,6 +13,7 @@ import br.com.riffel.cartaodevisitas.App
 import br.com.riffel.cartaodevisitas.R
 import br.com.riffel.cartaodevisitas.data.CartaoVisita
 import br.com.riffel.cartaodevisitas.databinding.ActivityAddCartaoBinding
+import br.com.riffel.cartaodevisitas.util.DataHolder
 
 
 class AddCartaoActivity : AppCompatActivity() {
@@ -27,7 +28,8 @@ class AddCartaoActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         initListeners()
-
+        val ct: CartaoVisita? = DataHolder.getPropriedade()
+        binding.tilNome.editText?.setText(ct?.nome)
     }
 
     private fun initListeners() {

@@ -11,6 +11,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import br.com.riffel.cartaodevisitas.App
 import br.com.riffel.cartaodevisitas.databinding.ActivityMainBinding
+import br.com.riffel.cartaodevisitas.util.DataHolder
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +34,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun initListeners() {
         binding.fab.setOnClickListener {
+            startActivity(Intent(this, AddCartaoActivity::class.java))
+        }
+
+        adapter.listenerShare = {
+            DataHolder.setPropriedade(it)
             startActivity(Intent(this, AddCartaoActivity::class.java))
         }
     }

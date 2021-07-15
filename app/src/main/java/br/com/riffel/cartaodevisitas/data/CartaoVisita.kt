@@ -16,4 +16,6 @@ data class CartaoVisita(
     val email: String,
     val telefone: String,
     val cor: String
+
+
 )

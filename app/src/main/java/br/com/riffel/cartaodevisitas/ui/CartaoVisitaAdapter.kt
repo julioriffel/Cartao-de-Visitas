@@ -7,9 +7,7 @@ package br.com.riffel.cartaodevisitas.ui
 
 import android.graphics.Color
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -18,7 +16,7 @@ import br.com.riffel.cartaodevisitas.databinding.ItemCartaoBinding
 
 class CartaoVisitaAdapter :
     ListAdapter<CartaoVisita, CartaoVisitaAdapter.ViewHolder>(DiffCallback()) {
-    var listenerShare: (View) -> Unit = {}
+    var listenerShare: (CartaoVisita) -> Unit = {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -37,7 +35,7 @@ class CartaoVisitaAdapter :
             binding.tvEmail.text = item.email
             binding.tvEmpresa.text = item.empresa
             binding.tvTelefone.text = item.telefone
-            binding.mcvContent.setOnClickListener { listenerShare(it) }
+            binding.mcvContent.setOnClickListener { listenerShare(item) }
             try {
                 binding.mcvContent.setBackgroundColor(Color.parseColor(item.cor))
             } catch (e: Exception) {
